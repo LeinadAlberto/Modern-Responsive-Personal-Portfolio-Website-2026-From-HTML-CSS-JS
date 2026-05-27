@@ -421,13 +421,35 @@ img {
 	z-index: 10;
 	color: var(--white-color);
 	font: var(--font-semi-bold) var(--smaller-font-size) var(--second-font);
+	position: absolute;
 	width: 100px;
 	height: 100px;
+	animation: rotate-text 8s linear infinite;
 }
 
+.home__text span {
+	position: absolute;
+	transform-origin: 0 46px;
+	left: 50px;
+	top: 5px;
+}
+
+.home__images .blob-big {
+	top: -1.5rem;
+	left: 0;
+	right: 0;
+	justify-self: center;
+}
 
 /* Circular text animation */
-
+@keyframes rotate-text {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 
 /*=============== BUTTON ===============*/
 

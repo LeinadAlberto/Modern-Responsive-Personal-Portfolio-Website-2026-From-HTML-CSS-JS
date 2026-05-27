@@ -35,7 +35,19 @@ const linkAction = () => {
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== HOME TEXT CIRCULAR ===============*/
+const homeText = document.getElementById('home-text'), 
+      letters = homeText.textContent.trim().split(''), // Converts text into an array of characters
+      angleStep = 360 / letters.length // Angle for each character; length counts the number of characters
 
+homeText.textContent = '' // Clears the original content 
+
+// Iterates through each character
+letters.forEach((char, i) => {
+   const span = document.createElement('span') // Creates a <span> for each letter
+   span.textContent = char // Inserts each character into the span
+   span.style.transform = `rotate(${i * angleStep}deg)` // Rotates each letter based on its index to form the circle
+   homeText.appendChild(span) // Appends the span to the main container
+})
 
 /*=============== HOME TYPED JS ===============*/
 
