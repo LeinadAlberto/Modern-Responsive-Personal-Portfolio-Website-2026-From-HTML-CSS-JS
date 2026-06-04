@@ -80,14 +80,36 @@ const swiperWork = new Swiper('.work__swiper', {
 		el: '.swiper-pagination',
 		clickable: true,
 	},
-	autoplay: {
+	/* autoplay: {
 		delay: 3000,
 		disableOnInteraction: false,
-	}
+	} */
 })
 
 /*=============== SERVICES ACCORDION ===============*/
+const servicesCards = document.querySelectorAll('.services__card'),
+      servicesButtons = document.querySelectorAll('.services__button')
 
+// It iterates over each button found
+servicesButtons.forEach(button => {
+	button.addEventListener('click', () => {
+		// Get the class of the clicked button (.services__card) and ↓
+		const currentCard = button.closest('.services__card'), 
+		// Check already has the services-open class (Returns true or false)
+			  isOpen = currentCard.classList.contains('services-open') 
+	
+		// Close all other services data
+		servicesCards.forEach(card => {
+			card.classList.replace('services-open', 'services-close')
+		})
+
+		// If the clicked card was closed, it opens it
+		if (!isOpen) {
+			currentCard.classList.replace('services-close', 'services-open')
+		}
+
+	})
+})
 
 /*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
 
