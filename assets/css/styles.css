@@ -18,8 +18,8 @@
 		-> Choose any color 
 		-> Copy the color mode (HSL)
 	*/
-	--hue: 110;
-	--first-color: hsl(var(--hue), 75%, 60%);
+	--hue: 255;
+	--first-color: hsl(var(--hue), 80%, 65%);
 	--gradient-color: linear-gradient(90deg, hsl(var(--hue), 75%, 60%) 0%,
 											hsl(var(--hue), 100%, 85%) 40%,
 											hsl(var(--hue), 100%, 85%) 60%,

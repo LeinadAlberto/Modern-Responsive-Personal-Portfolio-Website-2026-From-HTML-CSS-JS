@@ -107,7 +107,6 @@ servicesButtons.forEach(button => {
 		if (!isOpen) {
 			currentCard.classList.replace('services-close', 'services-open')
 		}
-
 	})
 })
 
