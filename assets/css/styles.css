@@ -18,8 +18,8 @@
 		-> Choose any color 
 		-> Copy the color mode (HSL)
 	*/
-	--hue: 15;
-	--first-color: hsl(var(--hue), 80%, 65%);
+	--hue: 358;
+	--first-color: hsl(var(--hue), 80%, 55%);
 	--gradient-color: linear-gradient(90deg, hsl(var(--hue), 75%, 60%) 0%,
 											hsl(var(--hue), 100%, 85%) 40%,
 											hsl(var(--hue), 100%, 85%) 60%,
@@ -753,12 +753,93 @@ img {
 	justify-self: center;
 }
 
-
 /*=============== TESTIMONIALS SECTION ===============*/
+.testimonials__container {
+	position: relative;
+	margin-inline: 0;
+	overflow: hidden;
+}
 
+.testimonials__card {
+	position: relative;
+	width: 280px;
+	background-color: var(--container-color);
+	padding: 1.5rem 1rem;
+	border-radius: 1.5rem;
+	margin-inline: 0.5rem;
+	overflow: hidden;
+}
+
+.testimonials__rating {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	margin-bottom: 1rem;
+	z-index: 5;
+}
+
+.testimonials__number {
+	font: var(--font-semi-bold) var(--h1-font-size) var(--second-font);
+	color: var(--first-color);
+}
+
+.testimonials__stars {
+	display: flex;
+	column-gap: 0.25rem;
+}
+
+.testimonials__stars i {
+	font-size: 1rem;
+	color: var(--white-color);
+}
+
+.testimonials__description {
+	margin-bottom: 3rem;
+	z-index: 5;
+}
+
+.testimonials__profile {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	z-index: 5;
+}
+
+.testimonials__img {
+	width: 40px;
+	border-radius: 50%;
+}
+
+.testimonials__name {
+	font: var(--font-semi-bold) var(--h3-font-size) var(--second-font);
+	color: var(--white-color);
+}
+
+.testimonials__card .blob-big {
+	z-index: 1;
+	right: -6rem;
+	bottom: -3rem;
+}
+
+.testimonials__content {
+	display: flex;
+	width: max-content;
+	animation: scroll 18s linear infinite;
+}
+
+.testimonials__content:hover {
+	animation-play-state: paused;
+}
 
 /* Infinite scroll animation */
-
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
 
 /*=============== CONTACT SECTION ===============*/
 
@@ -984,6 +1065,51 @@ img {
 
 	.skills__card .blob-small {
 		top: -7.5rem;
+	}
+
+	.testimonials__card {
+		width: 420px;
+		padding: 3rem;
+		border-radius: 3rem;
+	}
+
+	.testimonials__number {
+		font-size: var(--h2-font-size);
+	}
+
+	.testimonials__rating {
+		margin-bottom: 2rem;
+	}
+
+	.testimonials__description {
+		font-size: var(--h3-font-size);
+		margin-bottom: 9.5rem;
+	}
+
+	.testimonials__card .blob-big {
+		bottom: -6rem;
+	}
+
+	.testimonials__container::after, 
+	.testimonials__container::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 15%;
+		height: 100%;
+	}
+
+	.testimonials__container::after {
+		left: 0;
+		background: linear-gradient(90deg, var(--body-color) 0%, 
+		                                   hsla(0, 0%, 0%, 0) 100%);
+	}
+
+	.testimonials__container::before {
+		right: 0;
+		z-index: 1;
+		background: linear-gradient(90deg, hsla(0, 0%, 0%, 0) 0%, 
+		                                   var(--body-color) 100%);
 	}
 }
 

@@ -111,7 +111,19 @@ servicesButtons.forEach(button => {
 })
 
 /*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
+// Get all testimonials sliders
+const tracks = document.querySelectorAll('.testimonials__content')
 
+tracks.forEach(track => {
+	// Get the child testimonial slider and create a copy of all cards 
+	const cards = [...track.children] // (...spread operator), converts the collection into an array
+
+	// Get all the testimonial sliders
+	for (const card of cards) {
+		// Duplicate the card and append it at the end
+		track.appendChild(card.cloneNode(true))
+	}
+})
 
 /*=============== CONTACT EMAIL JS ===============*/
 
