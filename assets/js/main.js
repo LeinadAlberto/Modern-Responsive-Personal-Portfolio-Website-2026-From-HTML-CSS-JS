@@ -126,7 +126,32 @@ tracks.forEach(track => {
 })
 
 /*=============== CONTACT EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'), 
+	  contactMessage = document.getElementById('contact-message')
 
+const sendEmail = async (e) => {
+	// Prevent the page from reloading
+	e.preventDefault()
+
+	try {
+		// serviceID - templateID - #form - publickey
+		await emailjs.sendForm('service_1t9srjb', 'template_y2jwfr9', '#contact-form', 'eu-1WTdUlXGNU-YMi')
+
+		// Show sent message
+		contactMessage.textContent = 'Message sent successfully ✅' 
+
+		// Clear input fields
+		contactForm.reset()
+	} catch (error) {
+		// Show error message
+		contactMessage.textContent = 'Message not sent (service error) ❌'
+	} finally {
+		// Remove message after five seconds
+		setTimeout(() => contactMessage.textContent = '', 5000)
+	}
+}
+
+contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SHOW SCROLL UP ===============*/
 

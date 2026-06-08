@@ -632,7 +632,87 @@
 
 			<!--==================== CONTACT SECTION ====================-->
 			<section class="contact section" id="contact">
+				<h2 class="section__title">
+					Contact <span>Me</span>
+				</h2>
 
+				<div class="contact__container container grid">
+					<form action="" class="contact__form grid" id="contact-form">
+						<div class="contact__group">
+							<input type="text" id="name" name="user_name" 
+								   required autocomplete="name" class="contact__input">
+							<label for="name" class="contact__label">Name</label>
+						</div><!-- /.contact__group -->
+
+						<div class="contact__group">
+							<input type="email" id="email" name="user_email" 
+							       required autocomplete="email" class="contact__input">
+							<label for="email" class="contact__label">Email</label>
+						</div><!-- /.contact__group -->
+
+						<div class="contact__group">
+							<textarea name="user_message" id="message" required 
+									  class="contact__input contact__area"></textarea>
+							<label for="message" class="contact__label">Message</label>
+						</div><!-- /.contact__group -->
+
+						<button type="submit" class="contact__button button">
+							<span>Send Message</span>
+							<i class="ri-arrow-right-line"></i>
+						</button>
+
+						<p class="contact__message" id="contact-message"></p>
+					</form>
+
+					<div class="contact__content grid">
+						<a href="mailto:lokyewebdev@gmail.com" target="_blank" class="contact__link">
+							<div class="contact__info">
+								<i class="ri-mail-line contact__icon"></i>
+
+								<div class="contact__text">
+									<h3 class="contact__title">Email</h3>
+									<address class="contact__address">lokywebdev@gmail.com</address>
+								</div><!-- /.contact__text -->
+							</div><!-- /.contact__info -->
+
+							<div class="contact__arrow">
+								<i class="ri-arrow-right-up-line"></i>
+							</div>
+						</a>
+
+						<a href="tel:+591 68854434" target="_blank" class="contact__link">
+							<div class="contact__info">
+								<i class="ri-phone-line contact__icon"></i>
+
+								<div class="contact__text">
+									<h3 class="contact__title">Phone number</h3>
+									<address class="contact__address">+591 68854434</address>
+								</div><!-- /.contact__text -->
+							</div><!-- /.contact__info -->
+
+							<div class="contact__arrow">
+								<i class="ri-arrow-right-up-line"></i>
+							</div>
+						</a>
+
+						<!-- Insert your location in Google Maps (https://www.google.com/maps) -->
+						<!-- Share -> Copy link -->
+						<a href="https://maps.app.goo.gl/ZrX3kLYfHu7Pthvo8" target="_blank" class="contact__link">
+							<div class="contact__info">
+								<i class="ri-map-pin-line contact__icon"></i>
+
+								<div class="contact__text">
+									<h3 class="contact__title">Location</h3>
+									<address class="contact__address">La Paz - Bolivia, San Miguel, Av. B #627</address>
+								</div><!-- /.contact__text -->
+							</div><!-- /.contact__info -->
+
+							<div class="contact__arrow">
+								<i class="ri-arrow-right-up-line"></i>
+							</div>
+						</a>
+					</div><!-- /.contact__content -->
+				</div><!-- /.contact__container -->
 			</section>
 		</main>
 
