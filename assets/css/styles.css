@@ -18,7 +18,7 @@
 		-> Choose any color 
 		-> Copy the color mode (HSL)
 	*/
-	--hue: 220;
+	--hue: 255;
 	--first-color: hsl(var(--hue), 80%, 60%);
 	--gradient-color: linear-gradient(90deg, hsl(var(--hue), 75%, 60%) 0%,
 											hsl(var(--hue), 100%, 85%) 40%,
@@ -172,7 +172,26 @@ img {
 }
 
 /*=============== CUSTOM CURSOR ===============*/
+.cursor {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+	width: 30px;
+	height: 30px;
+	background-color: hsl(var(--hue), 60%, 75%);
+	border-radius: 50%;
+	box-shadow: 0 0 30px var(--first-color);
+	mix-blend-mode: difference;
+	pointer-events: none;
+	transition: transform 0.2s ease-out, left 0.2s ease-out, 
+						  top 0.2s ease-out, width 0.3s, height 0.3s;
+}
 
+.hide-cursor {
+	width: 0;
+	height: 0;
+}
 
 /*=============== HEADER & NAV ===============*/
 .header {
@@ -1380,3 +1399,8 @@ img {
 }
 
 /* Custom cursor is hidden for mobile devices */
+@media (pointer: coarse) {
+	.cursor {
+		display: none;
+	}
+}

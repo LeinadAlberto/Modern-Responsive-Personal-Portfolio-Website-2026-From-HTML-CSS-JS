@@ -187,6 +187,39 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive)
 
 /*=============== CUSTOM CURSOR ===============*/
+const cursor = document.querySelector('.cursor')
+let mouseX = 0, mouseY = 0 // Store mouse position
 
+const cursorMove = () => {
+	cursor.style.left = `${mouseX}px` // Horizontal position (X-axis)
+	cursor.style.top = `${mouseY}px` // Vertical position (Y-axis)
+	cursor.style.transform = 'translate(-50%, -50%)' // Centers the element at the pointer
+
+	// Repeats the function with each movement
+	requestAnimationFrame(cursorMove)
+}
+
+// Detects mouse movement and updates positions
+document.addEventListener('mousemove', (e) => {
+	mouseX = e.clientX // Save position X
+	mouseY = e.clientY // Save position Y
+})
+
+cursorMove();
+
+/* Hide custom cursor on links */
+const a = document.querySelectorAll('a')
+
+a.forEach(item => {
+	// Mouse enters the link and hides the cursor 
+	item.addEventListener('mouseover', () => {
+		cursor.classList.add('hide-cursor')
+	})
+
+	// Mouse exits the link and show the cursor
+	item.addEventListener('mouseleave', () => {
+		cursor.classList.remove('hide-cursor')
+	})
+})
 
 /*=============== SCROLLREVEAL ANIMATION ===============*/
